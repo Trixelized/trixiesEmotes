@@ -26,7 +26,7 @@ function Sprite:init(path, width, height, tileWidth, tileHeight)
 	local tileHeight = tileHeight or height
 
 	-- Get the most basic of texture defenitions.
-	local textureDef = get_texture_definition(TEXTURE.DATA_TEXTURES_PLACEHOLDER_0)
+	local textureDef = TextureDefinition.new()
 	
 	-- Change parameters, the ones with 0 are unused.
 	textureDef.texture_path = path
@@ -34,10 +34,6 @@ function Sprite:init(path, width, height, tileWidth, tileHeight)
 	textureDef.height = height
 	textureDef.tile_width = tileWidth
 	textureDef.tile_height = tileHeight
-	textureDef.sub_image_offset_x = 0
-	textureDef.sub_image_offset_y = 0
-	textureDef.sub_image_width = 0
-	textureDef.sub_image_height = 0
 	
 	-- Define and store the texture.
 	self.texture = define_texture(textureDef)
